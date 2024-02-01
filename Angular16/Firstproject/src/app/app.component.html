@@ -8,4 +8,4 @@
 <app-searchbar (searchTextChanged)="setSearchText($event)"></app-searchbar>
 <app-product [searchText1]="searchText" #productcomponent></app-product>
 
-<app-productdetail *ngIf="productcomponent.selectedProduct"></app-productdetail>
+<app-productdetail *ngIf="productcomponent.selectedProduct" [productComp]="productComponent"></app-productdetail>

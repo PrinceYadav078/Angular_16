@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
+import { ProductComponent } from './product/product.component';
 
 @Component({
   selector: 'app-root',
@@ -14,4 +15,6 @@ export class AppComponent {
     console.log(val)
     this.searchText=val
   }
+
+ @ViewChild(ProductComponent)  productComponent:ProductComponent
 }

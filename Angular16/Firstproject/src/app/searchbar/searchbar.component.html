@@ -1,17 +1,18 @@
-<div
-  class="ekart--search--product"
-  [ngClass]="{ 'btn-not-allowed': !searchText }"
->
-  <input class="ekart-search-product-input" #searchinput />
-  <button class="btn btn-search" (click)="setSearchText(searchinput)">
-    Search
-  </button>
+<div [ngClass]="{ 'btn-not-allowed': !searchText }"
+	class="ekart--search--product">
+	<input #searchinput
+		class="ekart-search-product-input">
+	<button (click)="setSearchText()"
+		class="btn btn-search">
+		Search
+	</button>
 </div>
 <div class="ekart-search-result-for">
-  <p *ngIf="searchText != ''">
-    <strong>Search result for:</strong> {{ searchText }}
-  </p>
+	<p *ngIf="searchText != ''">
+		<strong>Search result for:</strong>
+		{{ searchText }}
+	</p>
 </div>
 
 <!-- false , '', null, undefined and 0  are falsy value apart from that all are truthy values
- all falsy values typecasted in to boolean  -->
+ all falsy values typecasted in to boolean -->
