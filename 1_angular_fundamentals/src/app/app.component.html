@@ -1,0 +1,52 @@
+<div style="text-align: center;">
+    <img src="favicon.ico">
+</div>
+
+<h1 class="info">Welcome to Angular 17 {{title}} </h1>
+<div class="btn">
+    <button (click)="showHeader()">Show header</button>
+    <button (click)="hideHeader()">Hide header</button>
+</div>
+
+@if(isheader){
+    <app-header></app-header>
+}
+
+<!-- <div class="input" >
+    <label for="age">Enter Age:</label>
+    <input id="age" type="text" placeholder="Enter age">
+</div> -->
+
+<br>
+
+@if(age<10){
+    <div class="age"> You are Child</div>
+}@else if(age>=10 && age<=40){
+    <div class="age">You are Young</div>
+}@else{
+    <div class="age">You are old</div>
+}
+
+<br>
+
+@switch(name){
+    @case("Prince Yadav"){
+        <div class="switch">Hello Prince Yadav</div>
+    }
+    @case("Tushar Satalkar"){
+        <div class="switch">Hello Tushar Satalkar</div>
+    }@default {
+        <div class="switch">No Such name exist</div>
+    }
+}
+
+<br>
+
+@for(emp of employee; track emp.id){
+    <ul class="loop">
+       <li> {{emp.id}} || {{emp.name}}</li>
+        
+    </ul>
+}@empty{
+    <div class="loop" style="color: red;">No Data Found</div>
+}

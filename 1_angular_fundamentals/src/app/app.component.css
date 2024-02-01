@@ -1,0 +1,30 @@
+.info{
+    text-align: center;
+    color: chocolate;
+}
+
+.btn{
+    text-align: center;
+    
+}
+
+.input{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.age{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.switch{
+    text-align: center;
+    margin-top: 20px;
+}
+.loop{
+    
+    text-align: center;
+    margin-top: 20px;
+    color: darkgreen;
+}
