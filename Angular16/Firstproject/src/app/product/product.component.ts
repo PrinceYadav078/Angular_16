@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { Product } from '../Model/Product';
+import { ProductdetailComponent } from '../productdetail/productdetail.component';
 
 @Component({
   selector: 'app-product',
@@ -584,7 +585,15 @@ export class ProductComponent {
 
   selectedProduct:Product
 
+  @ViewChild(ProductdetailComponent) prodDetailComp:ProductdetailComponent
 
+  setSelectedProdAndIsOpen(prod){
+    this.selectedProduct=prod;
+    this.prodDetailComp.isOpen=true
+    console.log(this.prodDetailComp.isOpen)
+  }
+
+  // (click)="selectedProduct = prod" 
 }
 
 

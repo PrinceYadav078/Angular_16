@@ -1,11 +1,15 @@
 <!-- <h1>Welcome to Angular 16 {{title}}</h1> -->
 
-<app-header></app-header>    <!--  selector:'app-header' -->
+<app-header></app-header>
+<!-- selector:'app-header' -->
 <!-- <div app-header></div>  selector:'[app-header]' -->
 <!-- <div id="app-header"></div> selector:'#app-header' -->
-<!-- <div class="app-header"></div>  selector:'.app-header'  -->
+<!-- <div class="app-header"></div>  selector:'.app-header' -->
 
 <app-searchbar (searchTextChanged)="setSearchText($event)"></app-searchbar>
-<app-product [searchText1]="searchText" #productcomponent></app-product>
+<app-product #productcomponent
+	[searchText1]="searchText" ></app-product>
 
-<app-productdetail *ngIf="productcomponent.selectedProduct" [productComp]="productComponent"></app-productdetail>
+<div *ngIf="productcomponent.selectedProduct">
+	<app-productdetail [productComp]="productComponent" ></app-productdetail>
+</div>

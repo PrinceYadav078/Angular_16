@@ -18,7 +18,7 @@
 <input type="text" bind-value="inputele" /> // PROPERTY BINDING
 
 <!-- String Interpolation is not work in for all types of html attributes like disabled, hidden
-  and checked  so we have to use property binding syntax   -->
+  and checked  so we have to use property binding syntax -->
 
 <!-- property binding is not work for html attribute like aria-hiden, aria-label, aria-expanded
     aria-control, data-id, data-name, data-value and colspan so we can use Attribute binding 
@@ -58,26 +58,21 @@
 
 <br /> -->
 
-<app-filter
-  [all]="products.length"
-  [instock]="totalinstock"
-  [outofstock]="totaloutofstock"
-  (selectedFilteredRadioButtonChanged)="onFilterChange($event)"
-></app-filter>
+<app-filter [all]="products.length"
+	[instock]="totalinstock"
+	[outofstock]="totaloutofstock"
+	(selectedFilteredRadioButtonChanged)="onFilterChange($event)"></app-filter>
 
 <h1 style="text-align: center">New Arrival</h1>
 <div class="ekart--products--container">
-  <div *ngFor="let prod of products" (click)="selectedProduct = prod">
-    <div
-      *ngIf="
+	<ng-container *ngFor="let prod of products">
+		<ng-container *ngIf="
         selectedFilteredRadioButton === 'all' ||
         prod.is_in_inventory.toString() === selectedFilteredRadioButton
-      "
-    >
-      <app-productlist
-        [product]="prod"
-        *ngIf="prod.name.toLocaleLowerCase().includes(searchText1)"
-      ></app-productlist>
-    </div>
-  </div>
+      ">
+			<app-productlist *ngIf="prod.name.toLocaleLowerCase().includes(searchText1)"
+				[product]="prod"
+				(click)="setSelectedProdAndIsOpen(prod)"></app-productlist>
+		</ng-container>
+	</ng-container>
 </div>

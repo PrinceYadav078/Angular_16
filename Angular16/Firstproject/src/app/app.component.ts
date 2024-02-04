@@ -1,5 +1,6 @@
 import { Component, Input, ViewChild } from '@angular/core';
 import { ProductComponent } from './product/product.component';
+import { ProductdetailComponent } from './productdetail/productdetail.component';
 
 @Component({
   selector: 'app-root',
@@ -17,4 +18,6 @@ export class AppComponent {
   }
 
  @ViewChild(ProductComponent)  productComponent:ProductComponent
+
+
 }

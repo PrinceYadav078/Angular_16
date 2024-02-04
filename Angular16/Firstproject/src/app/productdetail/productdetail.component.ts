@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { ProductComponent } from '../product/product.component';
 import { Product } from '../Model/Product';
 
@@ -16,7 +16,17 @@ export class ProductdetailComponent {
 
   ngOnInit(){
    this.product =this.productComp.selectedProduct;
+   
   }
 
-    
+  @Input()
+  isOpen:boolean=true;
+
+  @ViewChild('prodDetailCard') prodCard:any
+  
+  closeProductDetailCard(){
+    this.isOpen=!this.isOpen;
+    // console.log(this.isOpen)
+  
+  }
 }
