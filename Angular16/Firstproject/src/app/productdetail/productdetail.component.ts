@@ -26,7 +26,7 @@ export class ProductdetailComponent {
   
   closeProductDetailCard(){
     this.isOpen=!this.isOpen;
-    // console.log(this.isOpen)
+    console.log(this.isOpen)
   
   }
 }

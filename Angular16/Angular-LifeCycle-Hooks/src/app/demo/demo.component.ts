@@ -10,8 +10,9 @@ import { Component, Input } from '@angular/core';
 })
 export class DemoComponent implements OnChanges {
   title:string='demo component'
+
   @Input()
-  message:string;
+  message:string [];
 
   constructor(){
     console.log("Demo Component constructor is called")
@@ -23,5 +24,8 @@ export class DemoComponent implements OnChanges {
     console.log("ngOnChange Hook Called")
     console.log(this.message)
     console.log(changes)
+  }
+  ngOnInit(){
+    console.log("ngOnInit Hook Called")
   }
 }

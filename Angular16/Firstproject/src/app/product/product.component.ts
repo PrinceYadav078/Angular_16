@@ -585,14 +585,19 @@ export class ProductComponent {
 
   selectedProduct:Product
 
+  isOpen:boolean;
+
   @ViewChild(ProductdetailComponent) prodDetailComp:ProductdetailComponent
 
   setSelectedProdAndIsOpen(prod){
     this.selectedProduct=prod;
-    this.prodDetailComp.isOpen=true
-    console.log(this.prodDetailComp.isOpen)
+    this.isOpen=true;
   }
 
+  // ngOnChanges(){
+  //   this.prodDetailComp.isOpen=true
+  //   console.log(this.prodDetailComp.isOpen)
+  // }
   // (click)="selectedProduct = prod" 
 }
 
