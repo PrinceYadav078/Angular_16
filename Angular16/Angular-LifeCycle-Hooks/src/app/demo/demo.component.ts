@@ -12,20 +12,24 @@ export class DemoComponent implements OnChanges {
   title:string='demo component'
 
   @Input()
-  message:string [];
+  message:string;
 
   constructor(){
     console.log("Demo Component constructor is called")
-    console.log(this.title)
-    console.log(this.message)
+    // console.log(this.title)
+    // console.log(this.message)
   }
 
   ngOnChanges(changes:SimpleChanges){
     console.log("ngOnChange Hook Called")
-    console.log(this.message)
-    console.log(changes)
+    // console.log(this.message)
+    // console.log(changes)
   }
   ngOnInit(){
     console.log("ngOnInit Hook Called")
+  }
+
+  ngDoCheck(){
+    console.log("ngDoCheck hook is called")
   }
 }

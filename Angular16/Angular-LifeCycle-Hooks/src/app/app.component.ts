@@ -9,8 +9,8 @@ export class AppComponent {
   constructor(){
     console.log("AppComponent constructor is called")
   }
-  inputVal:string[]=['hello Prince','Hi There'];
+  inputVal:string ='';
   onBtnClick(inputEl:HTMLInputElement){
-    this.inputVal.push(inputEl.value)
+    this.inputVal=inputEl.value
   }
 }
