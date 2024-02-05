@@ -20,12 +20,12 @@ export class ProductdetailComponent {
   }
 
   @Input()
-  isOpen:boolean=true;
+  isOpen = true;
 
   @ViewChild('prodDetailCard') prodCard:any
   
   closeProductDetailCard(){
-    this.isOpen=!this.isOpen;
+    this.isOpen = !this.isOpen;
     console.log(this.isOpen)
   
   }

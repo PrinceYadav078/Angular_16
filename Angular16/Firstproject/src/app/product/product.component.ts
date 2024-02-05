@@ -591,7 +591,7 @@ export class ProductComponent {
 
   setSelectedProdAndIsOpen(prod){
     this.selectedProduct=prod;
-    this.isOpen=true;
+    this.isOpen=false;
   }
 
   // ngOnChanges(){
