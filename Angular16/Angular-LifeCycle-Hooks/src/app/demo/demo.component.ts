@@ -1,4 +1,4 @@
-import { AfterContentInit, ContentChild, ElementRef, SimpleChange } from '@angular/core';
+import { AfterContentInit, ContentChild, ElementRef, SimpleChange, ViewChild } from '@angular/core';
 import { SimpleChanges } from '@angular/core';
 import { OnChanges } from '@angular/core';
 import { Component, Input } from '@angular/core';
@@ -21,6 +21,7 @@ export class DemoComponent implements OnChanges, AfterContentInit {
   }
 
   @ContentChild('para') paraEl:ElementRef
+  @ViewChild('temp') tempPara:ElementRef
 
   ngOnChanges(changes:SimpleChanges){
     console.log("ngOnChange Hook Called")
@@ -44,5 +45,11 @@ export class DemoComponent implements OnChanges, AfterContentInit {
   ngAfterContentChecked(){
     console.log("ngAfterContentChecked hook is called")
     console.log("in ngAfterContentChecked",this.paraEl.nativeElement)
+    console.log("in ngAfterContentChecked",this.tempPara)
+  }
+
+  ngAfterViewInit(){
+    console.log("ngAfterViewInit hook is called")
+    console.log("in ngAfterViewInit",this.tempPara)
   }
 }
