@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import { Component, Input, Output, ViewChild } from '@angular/core';
 import { Product } from '../Model/Product';
 import { ProductdetailComponent } from '../productdetail/productdetail.component';
 
@@ -585,13 +585,13 @@ export class ProductComponent {
 
   selectedProduct:Product
 
-  isOpen:boolean;
 
-  @ViewChild(ProductdetailComponent) prodDetailComp:ProductdetailComponent
+  isOpen:boolean;
 
   setSelectedProdAndIsOpen(prod){
     this.selectedProduct=prod;
-    this.isOpen=false;
+    this.isOpen=true;
+    console.log(this.isOpen)
   }
 
   // ngOnChanges(){

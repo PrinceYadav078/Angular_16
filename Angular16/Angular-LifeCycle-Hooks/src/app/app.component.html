@@ -2,6 +2,6 @@
   <input type="text" #input (focus)="0">
   <button (click)="onBtnClick(input)">Submit</button>
   <app-demo [message]="inputVal">
-    <p #para>this is projected content</p>
+    <p #para>user entered following text: {{inputVal}}</p>
   </app-demo>
 </div>
