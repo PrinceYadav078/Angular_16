@@ -8,9 +8,8 @@ import { DemoComponent } from '../demo/demo.component';
 })
 export class TestComponent {
 
-  // @Input() DemoComp:DemoComponent=undefined;
+  @Input() msg:string;
 
-  // mssg:String;
 
  
 }

@@ -17,9 +17,16 @@ export class AppComponent {
 
   
   @ViewChild(DemoComponent) demoComp:DemoComponent;
-
+  mssg:string;
   ngAfterViewInit(){
     console.log("parent component ngAfterViewInit hook is called")
+   
+  }
+
+  ngAfterViewChecked(){
+    console.log(" parent component ngAfterViewChecked hook is called")
+    console.log("in parent component ngAfterViewCheked", this.demoComp.message)
+    // this.mssg=this.demoComp.message
    
   }
   

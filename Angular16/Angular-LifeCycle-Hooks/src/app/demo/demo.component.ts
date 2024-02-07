@@ -34,22 +34,27 @@ export class DemoComponent implements OnChanges, AfterContentInit {
 
   ngDoCheck(){
     console.log("ngDoCheck hook is called")
-    console.log("in ngDoCheck ",this.paraEl)
+    // console.log("in ngDoCheck ",this.paraEl)
   }
 
   ngAfterContentInit(){
     console.log("ngAfterContentInit hook is called")
-    console.log("in ngAfterContentInit",this.paraEl.nativeElement)
+    // console.log("in ngAfterContentInit",this.paraEl.nativeElement)
   }
 
   ngAfterContentChecked(){
     console.log("ngAfterContentChecked hook is called")
-    console.log("in ngAfterContentChecked",this.paraEl.nativeElement)
-    console.log("in ngAfterContentChecked",this.tempPara)
+    // console.log("in ngAfterContentChecked",this.paraEl.nativeElement)
+    // console.log("in ngAfterContentChecked",this.tempPara)
   }
 
   ngAfterViewInit(){
     console.log("ngAfterViewInit hook is called")
-    console.log("in ngAfterViewInit",this.tempPara)
+    // console.log("in ngAfterViewInit",this.tempPara)
   }
+  ngAfterViewChecked(){
+    console.log("ngAfterViewChecked hook is called")
+    console.log("in ngAfterViewCheked", this.message)
+  }
+
 }
