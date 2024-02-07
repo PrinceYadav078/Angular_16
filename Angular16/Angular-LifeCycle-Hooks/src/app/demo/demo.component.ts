@@ -57,4 +57,8 @@ export class DemoComponent implements OnChanges, AfterContentInit {
     console.log("in ngAfterViewCheked", this.message)
   }
 
+  ngOnDestroy(){
+    console.log("ngOnDestroy hook is called")
+  }
+
 }

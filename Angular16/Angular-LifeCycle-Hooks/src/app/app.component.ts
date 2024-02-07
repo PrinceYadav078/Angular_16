@@ -11,11 +11,18 @@ export class AppComponent {
     console.log("AppComponent constructor is called")
   }
   inputVal:string ='';
+
+  toDestroy=false;
+
   onBtnClick(inputEl:HTMLInputElement){
     this.inputVal=inputEl.value
   }
 
-  
+  onDestroy(){
+    this.toDestroy=!this.toDestroy
+  }
+
+
   @ViewChild(DemoComponent) demoComp:DemoComponent;
   mssg:string;
   ngAfterViewInit(){
@@ -25,7 +32,7 @@ export class AppComponent {
 
   ngAfterViewChecked(){
     console.log(" parent component ngAfterViewChecked hook is called")
-    console.log("in parent component ngAfterViewCheked", this.demoComp.message)
+    // console.log("in parent component ngAfterViewCheked", this.demoComp.message)
     // this.mssg=this.demoComp.message
    
   }

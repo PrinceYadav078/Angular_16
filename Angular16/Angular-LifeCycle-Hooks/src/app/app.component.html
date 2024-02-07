@@ -1,9 +1,11 @@
 <div class="container">
   <input type="text" #input (focus)="0">
   <button (click)="onBtnClick(input)">Submit</button>
-  <app-demo [message]="inputVal">
+  <app-demo [message]="inputVal" *ngIf="!toDestroy">
     <p #para>user entered following text: {{inputVal}}</p>
   </app-demo>
+  <br><br>
+  <button (click)="onDestroy()">Show/Hide</button>
   <hr>
   <app-test [msg]="mssg"></app-test>
 </div>
