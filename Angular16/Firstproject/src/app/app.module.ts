@@ -10,6 +10,7 @@ import { ProductlistComponent } from './product/productlist/productlist.componen
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { FilterComponent } from './product/filter/filter.component';
 import { ProductdetailComponent } from './productdetail/productdetail.component';
+import { SetBackground } from './CustomDirectives/SetBackround.directive';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ProductdetailComponent } from './productdetail/productdetail.component'
     ProductlistComponent,
     SearchbarComponent,
     FilterComponent,
-    ProductdetailComponent
+    ProductdetailComponent,
+    SetBackground
   ],
   imports: [
     BrowserModule,
