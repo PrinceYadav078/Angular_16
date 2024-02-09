@@ -1,0 +1,80 @@
+.parent{
+    
+    display: flex;
+    justify-content: space-around;
+    margin: 25px;
+    padding: 25px;
+    align-items: center;
+}
+
+.btn-basic{
+    cursor: default;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 600;
+}
+
+.btn-primary{
+    font-size: larger;
+    color: white;
+    cursor: pointer;
+    border: 0;
+    border-radius: 5px;
+    background-color: rgb(103, 197, 209);  
+}
+
+.btn-danger{
+    font-size: x-large;
+    align-items: center;
+    color: white;
+    background-color: rgb(212, 14, 57);
+    cursor: not-allowed;
+    border-radius: 10px;
+    border: 0;   
+}
+
+.btn-warning{
+    font-size: xx-large;
+    color: white;
+    cursor: pointer;
+    border-radius: 25px;
+    border: 0;
+    background-color: rgb(216, 98, 51);
+   
+}
+
+button{
+    height: 40px;
+    width: 160px;
+}
+
+button:hover {
+   transform: scale(1.2);
+   box-shadow: 10px 10px 35px 2px rgb(198, 194, 199);
+}
+
+.btn-basic:hover {
+    background-color: green;
+    border-radius: 5px;
+}
+
+/* Media Querry */
+
+@media (width<=768px){
+    .parent{
+
+        display: grid;
+        gap: 25px;
+    }
+}
+
+@media (width>768px) and (width<1024px){
+    .parent{
+        display: grid;
+        justify-content: space-around;
+        grid-template-columns: 160px 160px ;
+        border:solid;
+        row-gap: 25px;
+        
+    }
+}
