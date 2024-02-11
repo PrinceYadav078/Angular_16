@@ -11,6 +11,8 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
 import { FilterComponent } from './product/filter/filter.component';
 import { ProductdetailComponent } from './productdetail/productdetail.component';
 import { SetBackground } from './CustomDirectives/SetBackround.directive';
+import { HighlightDirective } from './CustomDirectives/highlight.directive';
+import { AppHoverDirective } from './CustomDirectives/app-hover.directive';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { SetBackground } from './CustomDirectives/SetBackround.directive';
     SearchbarComponent,
     FilterComponent,
     ProductdetailComponent,
-    SetBackground
+    SetBackground,
+    HighlightDirective,
+    AppHoverDirective
   ],
   imports: [
     BrowserModule,

@@ -80,13 +80,13 @@
     <div class="ekart-product-detail-addtoCart">
       <button
         *ngIf="product.is_in_inventory; else notifyMe"
-        class="btn-add-to-cart"
+        class="btn-add-to-cart" appAppHover
       >
         ADD TO CART
       </button>
     </div>
     <ng-template #notifyMe>
-      <button class="btn-add-to-cart">Notify Me</button>
+      <button class="btn-add-to-cart" appAppHover>Notify Me</button>
     </ng-template>
   </div>
   <div class="overlay"></div>
