@@ -1,0 +1,20 @@
+h1{
+    margin: 20px 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #28282B;
+}
+
+.container{
+    margin: 20px 50px;
+    padding: 10px 20px;
+}
+
+.highlight{
+    border:#28282B 3px solid;
+    background-color: orange;
+}
+
+.font{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
