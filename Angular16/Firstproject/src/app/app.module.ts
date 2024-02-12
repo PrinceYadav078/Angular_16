@@ -13,6 +13,7 @@ import { ProductdetailComponent } from './productdetail/productdetail.component'
 import { SetBackground } from './CustomDirectives/SetBackround.directive';
 import { HighlightDirective } from './CustomDirectives/highlight.directive';
 import { AppHoverDirective } from './CustomDirectives/app-hover.directive';
+import { DisableproductDirective } from './CustomDirectives/disableproduct.directive';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { AppHoverDirective } from './CustomDirectives/app-hover.directive';
     ProductdetailComponent,
     SetBackground,
     HighlightDirective,
-    AppHoverDirective
+    AppHoverDirective,
+    DisableproductDirective
   ],
   imports: [
     BrowserModule,
