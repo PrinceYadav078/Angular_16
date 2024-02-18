@@ -6,7 +6,7 @@ import { subscribeOn } from 'rxjs';
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
-  providers:[SubscribeService] //2. WHAT TO PROVIDE 
+  // providers:[SubscribeService] //2. WHAT TO PROVIDE 
 })
 export class HeaderComponent {
 

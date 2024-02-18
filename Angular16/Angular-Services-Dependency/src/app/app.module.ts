@@ -8,6 +8,7 @@ import { AdminComponent } from './header/admin/admin.component';
 import { HomeComponent } from './header/home/home.component';
 import { HeroComponent } from './header/home/hero/hero.component';
 import { SidebarComponent } from './header/home/sidebar/sidebar.component';
+import { SubscribeService } from './Services/subscribe.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { SidebarComponent } from './header/home/sidebar/sidebar.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [SubscribeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

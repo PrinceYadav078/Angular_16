@@ -5,7 +5,7 @@ import { SubscribeService } from 'src/app/Services/subscribe.service';
   selector: 'app-hero',
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.css'],
-  providers:[SubscribeService] //2. WHAT TO PROVIDE 
+  // providers:[SubscribeService] //2. WHAT TO PROVIDE 
 })
 export class HeroComponent {
 
