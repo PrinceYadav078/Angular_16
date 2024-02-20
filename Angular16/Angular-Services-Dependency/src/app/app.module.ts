@@ -9,6 +9,9 @@ import { HomeComponent } from './header/home/home.component';
 import { HeroComponent } from './header/home/hero/hero.component';
 import { SidebarComponent } from './header/home/sidebar/sidebar.component';
 import { SubscribeService } from './Services/subscribe.service';
+import { UserListComponent } from './header/admin/user-list/user-list.component';
+import { FormsModule } from '@angular/forms';
+import { UserService } from './Services/user.service';
 
 @NgModule({
   declarations: [
@@ -17,13 +20,15 @@ import { SubscribeService } from './Services/subscribe.service';
     AdminComponent,
     HomeComponent,
     HeroComponent,
-    SidebarComponent
+    SidebarComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [SubscribeService],
+  providers: [SubscribeService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
