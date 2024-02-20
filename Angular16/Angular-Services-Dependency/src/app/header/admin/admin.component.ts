@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UserService } from 'src/app/Services/user.service';
 
+
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
