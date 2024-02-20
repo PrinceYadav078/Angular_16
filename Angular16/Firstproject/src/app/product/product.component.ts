@@ -1,6 +1,7 @@
 import { Component, Input, Output, ViewChild } from '@angular/core';
 import { Product } from '../Model/Product';
 import { ProductdetailComponent } from '../productdetail/productdetail.component';
+import { CloseProductDetailService } from '../Services/close-product-detail.service';
 
 @Component({
   selector: 'app-product',
@@ -585,13 +586,16 @@ export class ProductComponent {
 
   selectedProduct:Product
 
+constructor(public openService:CloseProductDetailService){}
 
-  isOpen:boolean;
+  // isOpen:boolean;
 
   setSelectedProdAndIsOpen(prod){
     this.selectedProduct=prod;
-    this.isOpen=true;
-    console.log(this.isOpen)
+    this.openService.onClose()
+    console.log(this.openService.isOpen)
+    // this.isOpen=true;
+    // console.log(this.isOpen)
   }
 
   // ngOnChanges(){

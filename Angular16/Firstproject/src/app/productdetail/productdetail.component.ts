@@ -1,13 +1,17 @@
 import { Component, Input, ViewChild } from '@angular/core';
 import { ProductComponent } from '../product/product.component';
 import { Product } from '../Model/Product';
+import { CloseProductDetailService } from '../Services/close-product-detail.service';
 
 @Component({
   selector: 'app-productdetail',
   templateUrl: './productdetail.component.html',
-  styleUrls: ['./productdetail.component.css']
+  styleUrls: ['./productdetail.component.css'],
+  providers:[CloseProductDetailService]
 })
 export class ProductdetailComponent {
+
+  constructor(public closeService:CloseProductDetailService){}
 
   product:Product
 
@@ -16,17 +20,23 @@ export class ProductdetailComponent {
 
   ngOnInit(){
    this.product =this.productComp.selectedProduct;
+  //  isOpen = this.closeService.isOpen
    
   }
-
-  @Input()
-  isOpen = true;
+  isOpen:boolean;
+  ngOnChanges(){
+    this.isOpen = this.closeService.isOpen
+  }
+  
 
   @ViewChild('prodDetailCard') prodCard:any
   
   closeProductDetailCard(){
-    this.isOpen = !this.isOpen;
-    console.log(this.isOpen)
+    // this.isOpen = !this.isOpen;
+    // console.log(this.isOpen)
+    this.closeService.onClose()
+    console.log(this.closeService.isOpen)
+    console.log("isopen ",this.isOpen)
   
   }
 }
