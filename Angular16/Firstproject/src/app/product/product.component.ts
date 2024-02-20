@@ -588,21 +588,14 @@ export class ProductComponent {
 
 constructor(public openService:CloseProductDetailService){}
 
-  // isOpen:boolean;
+  
 
   setSelectedProdAndIsOpen(prod){
     this.selectedProduct=prod;
     this.openService.onClose()
     console.log(this.openService.isOpen)
-    // this.isOpen=true;
-    // console.log(this.isOpen)
   }
 
-  // ngOnChanges(){
-  //   this.prodDetailComp.isOpen=true
-  //   console.log(this.prodDetailComp.isOpen)
-  // }
-  // (click)="selectedProduct = prod" 
 }
 
 

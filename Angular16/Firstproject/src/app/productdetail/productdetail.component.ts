@@ -7,7 +7,7 @@ import { CloseProductDetailService } from '../Services/close-product-detail.serv
   selector: 'app-productdetail',
   templateUrl: './productdetail.component.html',
   styleUrls: ['./productdetail.component.css'],
-  providers:[CloseProductDetailService]
+  
 })
 export class ProductdetailComponent {
 

@@ -14,6 +14,7 @@ import { SetBackground } from './CustomDirectives/SetBackround.directive';
 import { HighlightDirective } from './CustomDirectives/highlight.directive';
 import { AppHoverDirective } from './CustomDirectives/app-hover.directive';
 import { DisableproductDirective } from './CustomDirectives/disableproduct.directive';
+import { CloseProductDetailService } from './Services/close-product-detail.service';
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import { DisableproductDirective } from './CustomDirectives/disableproduct.direc
    
   
   ],
-  providers: [],
+  providers: [CloseProductDetailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
