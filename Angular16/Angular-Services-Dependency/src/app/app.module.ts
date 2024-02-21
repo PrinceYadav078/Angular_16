@@ -13,6 +13,7 @@ import { UserListComponent } from './header/admin/user-list/user-list.component'
 import { FormsModule } from '@angular/forms';
 import { UserService } from './Services/user.service';
 import { LoggerService } from './Services/logger.service';
+import { UserDetailComponent } from './header/admin/user-detail/user-detail.component';
 
 export const USER_TOKEN = new InjectionToken<UserService>('USER_TOKEN');
 
@@ -25,6 +26,7 @@ export const USER_TOKEN = new InjectionToken<UserService>('USER_TOKEN');
     HeroComponent,
     SidebarComponent,
     UserListComponent,
+    UserDetailComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [

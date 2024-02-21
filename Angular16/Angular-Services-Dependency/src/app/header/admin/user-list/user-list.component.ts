@@ -1,4 +1,5 @@
 import { Component, Inject } from '@angular/core';
+import { User } from 'src/app/Model/user';
 import { UserService } from 'src/app/Services/user.service';
 import { USER_TOKEN } from 'src/app/app.module';
 
@@ -15,4 +16,8 @@ export class UserListComponent {
   
   userList= this.userService.getAllUser();
   
+
+  onUserDetail(user:User){
+    this.userService.onShowUserDetail(user);
+  }
 }
