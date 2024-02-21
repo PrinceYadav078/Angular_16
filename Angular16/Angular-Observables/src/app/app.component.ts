@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, from, of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -11,43 +11,54 @@ export class AppComponent {
 
   data: any[] = [];
 
+  array1=[1,2,3,4,5];
+  array2=['A','B','C','D','E'];
+
   //1.CREATE AN OBSERVABLE
 
   //OBSERVABLE
-  myobservable = new Observable((observer) => {
-    // observer.next([1,2,3,4,5]);
+  // myobservable = new Observable((observer) => {
+  //   // observer.next([1,2,3,4,5]);
 
-    //STREAMING THE DATA
-    // observer.next(1)
-    // observer.next(2)
-    // observer.next(3)
-    // observer.next(4)
-    // observer.next(5)
+  //   //STREAMING THE DATA
+  //   // observer.next(1)
+  //   // observer.next(2)
+  //   // observer.next(3)
+  //   // observer.next(4)
+  //   // observer.next(5)
 
-    //STREAMING THE DATA
-    setTimeout(() => {
-      observer.next(1);
-    }, 1000);
-    setTimeout(() => {
-      observer.next(2);
-    }, 2000);
-    setTimeout(() => {
-      observer.next(3);
-    }, 3000);
+  //   //STREAMING THE DATA
+  //   setTimeout(() => {
+  //     observer.next(1);
+  //   }, 1000);
+  //   setTimeout(() => {
+  //     observer.next(2);
+  //   }, 2000);
+  //   setTimeout(() => {
+  //     observer.next(3);
+  //   }, 3000);
 
-    // setTimeout(()=>{observer.error(new Error('Something Went Wrong please try again later!'))},4000)
+  //   // setTimeout(()=>{observer.error(new Error('Something Went Wrong please try again later!'))},4000)
 
-    setTimeout(() => {
-      observer.next(4);
-    }, 4000);
-    setTimeout(() => {
-      observer.next(5);
-    }, 5000);
+  //   setTimeout(() => {
+  //     observer.next(4);
+  //   }, 4000);
+  //   setTimeout(() => {
+  //     observer.next(5);
+  //   }, 5000);
 
-    setTimeout(() => {
-      observer.complete();
-    }, 6000);
-  });
+  //   setTimeout(() => {
+  //     observer.complete();
+  //   }, 6000);
+  // });
+
+  // myobservable=of(this.array1, this.array2, 20, 30 , 'Prince')
+
+  mypromise=new Promise((resolve, reject) => {
+    resolve([1,2,3,4,5])
+  })
+
+  myobservable=from(this.mypromise);
 
   //   getAsyncData(){
   //     // OBSERVER
