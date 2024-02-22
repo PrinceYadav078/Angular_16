@@ -13,8 +13,7 @@ export class ShowTaskComponent {
   
   ngOnInit(){
     this.taskService.CreateTask.subscribe((newTask)=>{
-      this.tasks.push(newTask);
-   
+      this.tasks.push(newTask);      
     })
   }
 }
