@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { Observable, from, fromEvent, of } from 'rxjs';
+import { Observable, filter, from, fromEvent, map, of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -63,7 +63,30 @@ export class AppComponent {
     resolve([1, 2, 3, 4, 5]);
   });
 
-  myobservable = from(this.mypromise);
+  //myobservabale- 2 4 6 8 10 12
+  //result- 10 20 30 40 50 60
+  myobservable = from([2, 4, 6, 8, 10, 12]).pipe(
+    map((val) => {
+      return val * 5;
+    }),
+    filter((val) => {
+      return val % 4 == 0;
+    })
+  );
+
+  //transformedObs 10 20 30 40 50 60
+  // transformedObs = this.myobservable.pipe(
+  //   map((val) => {
+  //     return val * 5;
+  //   })
+  // );
+
+  //filteredObs 20 40 60
+  // filteredObs = this.transformedObs.pipe(
+  //   filter((val) => {
+  //     return val % 4 === 0;
+  //   })
+  // );
 
   //   getAsyncData(){
   //     // OBSERVER
@@ -94,25 +117,24 @@ export class AppComponent {
     });
   }
 
-  buttonClicked() {
-    let count=1
-    this.createBtnObs = fromEvent(
-      this.createBtn.nativeElement,
-      'click'
-    ).subscribe((data) => {
-      this.showItem(count++);
-    });
+  // buttonClicked() {
+  //   let count=1
+  //   this.createBtnObs = fromEvent(
+  //     this.createBtn.nativeElement,
+  //     'click'
+  //   ).subscribe((data) => {
+  //     this.showItem(count++);
+  //   });
+  // }
+
+  ngAfterViewInit() {
+    // this.buttonClicked();
   }
 
-
-  ngAfterViewInit(){
-    this.buttonClicked();
-  }
-
-  showItem(count){
-    let div= document.createElement('div');
-    div.className='data-list'
-    div.innerText='item'+count;
-    document.getElementById('content').appendChild(div)
-  }
+  // showItem(count){
+  //   let div= document.createElement('div');
+  //   div.className='data-list'
+  //   div.innerText='item'+count;
+  //   document.getElementById('content').appendChild(div)
+  // }
 }
