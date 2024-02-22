@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Observable, from, of } from 'rxjs';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Observable, from, fromEvent, of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +11,13 @@ export class AppComponent {
 
   data: any[] = [];
 
-  array1=[1,2,3,4,5];
-  array2=['A','B','C','D','E'];
+  array1 = [1, 2, 3, 4, 5];
+  array2 = ['A', 'B', 'C', 'D', 'E'];
+
+  @ViewChild('createbtn')
+  createBtn: ElementRef;
+
+  createBtnObs;
 
   //1.CREATE AN OBSERVABLE
 
@@ -54,11 +59,11 @@ export class AppComponent {
 
   // myobservable=of(this.array1, this.array2, 20, 30 , 'Prince')
 
-  mypromise=new Promise((resolve, reject) => {
-    resolve([1,2,3,4,5])
-  })
+  mypromise = new Promise((resolve, reject) => {
+    resolve([1, 2, 3, 4, 5]);
+  });
 
-  myobservable=from(this.mypromise);
+  myobservable = from(this.mypromise);
 
   //   getAsyncData(){
   //     // OBSERVER
@@ -74,7 +79,7 @@ export class AppComponent {
   getAsyncData() {
     // OBSERVER
     //next, error, complete
-    
+
     //NEW WAY TO WRITE CALLBACK METHODS
     this.myobservable.subscribe({
       next: (val: any) => {
@@ -87,5 +92,27 @@ export class AppComponent {
         alert('All the data is streamed');
       },
     });
+  }
+
+  buttonClicked() {
+    let count=1
+    this.createBtnObs = fromEvent(
+      this.createBtn.nativeElement,
+      'click'
+    ).subscribe((data) => {
+      this.showItem(count++);
+    });
+  }
+
+
+  ngAfterViewInit(){
+    this.buttonClicked();
+  }
+
+  showItem(count){
+    let div= document.createElement('div');
+    div.className='data-list'
+    div.innerText='item'+count;
+    document.getElementById('content').appendChild(div)
   }
 }
