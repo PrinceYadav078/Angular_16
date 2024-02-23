@@ -39,3 +39,5 @@ export class SubjectsComponent {
     data.subscribe(subject);
   }
 }
+//Subjects are multicasted 
+//Observavble are unicasted
