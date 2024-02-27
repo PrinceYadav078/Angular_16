@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { ajax } from 'rxjs/ajax';
 @Component({
   selector: 'app-subjects',
@@ -12,13 +12,24 @@ export class SubjectsComponent {
   ngOnInit() {
     // let obs= new Observable((observer)=>{observer.next(Math.random())})
     const sub = new Subject();
+    const Behv_subject = new BehaviorSubject<number>(100);
+
     //Subscriber 1
     // obs.subscribe((val)=>{console.log(val)})
-    sub.subscribe((val) => console.log(val));
+    // sub.subscribe((val) => console.log(val));
+    Behv_subject.subscribe((val)=>{console.log("Subcribr1=> ",val)});
 
     //Subscriber 2
     // obs.subscribe((val)=>{console.log(val)})
-    sub.subscribe((val) => console.log(val));
+    // sub.subscribe((val) => console.log(val));
+    Behv_subject.subscribe((val)=>{console.log("Subcribr2=> ",val)});
+
+    Behv_subject.next(2018);
+
+    //Subscriber 3
+    Behv_subject.subscribe((val)=>{console.log("Subcribr3=> ",val)});
+
+    Behv_subject.next(2023)
 
     sub.next(Math.random());
 
