@@ -14,6 +14,7 @@ import { ContactUsComponent } from './home/contact-us/contact-us.component';
 import { PopularComponent } from './home/popular/popular.component';
 import { ServicesComponent } from './home/services/services.component';
 import { TestimonyComponent } from './home/testimony/testimony.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { TestimonyComponent } from './home/testimony/testimony.component';
     ContactUsComponent,
     PopularComponent,
     ServicesComponent,
-    TestimonyComponent
+    TestimonyComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
