@@ -15,6 +15,7 @@ import { PopularComponent } from './home/popular/popular.component';
 import { ServicesComponent } from './home/services/services.component';
 import { TestimonyComponent } from './home/testimony/testimony.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { CourseDetailComponent } from './courses/course-detail/course-detail.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     PopularComponent,
     ServicesComponent,
     TestimonyComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    CourseDetailComponent
   ],
   imports: [
     BrowserModule,
