@@ -4,6 +4,7 @@ a{
 }
 h2{
     color: #21f0f0;
+    cursor: default;
 }
 .page-header-topbar{
     background-color: #36454F;
