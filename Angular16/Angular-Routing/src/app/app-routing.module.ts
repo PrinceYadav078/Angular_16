@@ -6,6 +6,7 @@ import { ContactComponent } from './contact/contact.component';
 import { CoursesComponent } from './courses/courses.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CourseDetailComponent } from './courses/course-detail/course-detail.component';
+import { PopularComponent } from './home/popular/popular.component';
 
 const routes: Routes = [
   // {path:'',component:HomeComponent},
@@ -14,7 +15,11 @@ const routes: Routes = [
   {path:'About',component:AboutComponent},
   {path:'Contact',component:ContactComponent},
   {path:'Courses',component:CoursesComponent},
-  {path:'Courses/Course/:id', component:CourseDetailComponent},
+  // {path:'Courses/Course/:id', component:CourseDetailComponent},
+  {path:'Courses',children:[
+    {path:'Course/:id',component:CourseDetailComponent},
+    {path:'Popular', component:PopularComponent}
+  ]},
   {path:'**',component:NotFoundComponent}
   
 ];
