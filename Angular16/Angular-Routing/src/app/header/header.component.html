@@ -1,79 +1,79 @@
 <div class="page-header-topbar">
-	<div class="page-header-secondary-msg">
-		<ul class="social-icons">
-			<li>
-				<a class="facebook"
-					href="#">
-					<i class="fa fa-facebook"></i>
-				</a>
-			</li>
-			<li>
-				<a class="twitter"
-					href="#">
-					<i class="fa fa-twitter"></i>
-				</a>
-			</li>
-			<li>
-				<a class="dribbble"
-					href="#">
-					<i class="fa fa-dribbble"></i>
-				</a>
-			</li>
-			<li>
-				<a class="linkedin"
-					href="#">
-					<i class="fa fa-linkedin"></i>
-				</a>
-			</li>
-		</ul>
-	</div>
-	<div class="page-header-secondary-nav">
-		<a [routerLink]="'Home'" fragment="search">SEARCH</a>
-		<a [routerLink]="'Home'" fragment="courses">POPULAR</a>
-		<a [routerLink]="'Home'" fragment="testimony">TESTIMONY</a>
-		<a [routerLink]="'Home'" fragment="services">SERVICES</a>
-		<a [routerLink]="'Home'" fragment="contact">CONTACT</a>
-		
-	</div>
+  <div class="page-header-secondary-msg">
+    <ul class="social-icons">
+      <li>
+        <a class="facebook" href="#">
+          <i class="fa fa-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter" href="#">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="dribbble" href="#">
+          <i class="fa fa-dribbble"></i>
+        </a>
+      </li>
+      <li>
+        <a class="linkedin" href="#">
+          <i class="fa fa-linkedin"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="page-header-secondary-nav">
+    <a [routerLink]="'Home'" fragment="search"> SEARCH </a>
+    <a [routerLink]="'Home'" fragment="courses"> POPULAR </a>
+    <a [routerLink]="'Home'" fragment="testimony"> TESTIMONY </a>
+    <a [routerLink]="'Home'" fragment="services"> SERVICES </a>
+    <a [routerLink]="'Home'" fragment="contact"> CONTACT </a>
+  </div>
 </div>
 
 <div class="page-header">
-	<!-- HOME HEADER -->
-	<div class="page-header-logo">
-		<h2 [routerLink]="'Home'"
-			class="logo">
-			Sync
-		</h2>
-	</div>
-	<div>
-		<div class="page-header-secondary"></div>
-		<div class="page-header-primary">
-			<div class="page-header-primary-nav">
-				<a [routerLinkActive]="'active'"
-					[routerLinkActiveOptions]="{ exact: true }"
-					routerLink="Home">
-					HOME
-				</a>
-				<a [routerLink]="'About'"
-					[routerLinkActive]="'active'"
-					[routerLinkActiveOptions]="{ exact: true }">
-					ABOUT
-				</a>
-				<a [routerLinkActive]="'active'"
-					[routerLinkActiveOptions]="{ exact: true }"
-					routerLink="Contact">
-					CONTACT
-				</a>
-				<a [routerLinkActive]="'active'"
-					[routerLinkActiveOptions]="{ exact: true }"
-					routerLink="Courses">
-					COURSES
-				</a>
-			</div>
-			<div class="page-header-login-logout">
-				<a href="#">LOGIN</a>
-				<a href="#">LOGOUT</a>
-			</div>
-		</div>
-	</div>
+  <!-- HOME HEADER -->
+  <div class="page-header-logo">
+    <h2 [routerLink]="'Home'" class="logo">Sync</h2>
+  </div>
+  <div>
+    <!-- <div class="page-header-secondary"></div> -->
+    <div class="page-header-primary">
+      <div class="page-header-primary-nav">
+        <a
+          [routerLinkActive]="'active'"
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLink="Home"
+        >
+          HOME
+        </a>
+        <a
+          [routerLink]="'About'"
+          [routerLinkActive]="'active'"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          ABOUT
+        </a>
+        <a
+          [routerLinkActive]="'active'"
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLink="Contact"
+        >
+          CONTACT
+        </a>
+        <a
+          [routerLinkActive]="'active'"
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLink="Courses"
+        >
+          COURSES
+        </a>
+      </div>
+      <div class="page-header-login-logout">
+        <a href="#">LOGIN</a>
+        <a href="#">LOGOUT</a>
+      </div>
+    </div>
+  </div>
 </div>

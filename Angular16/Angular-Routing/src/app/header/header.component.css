@@ -27,10 +27,11 @@ a{
     display: flex;
 }
 .page-header-primary-nav{
-    margin-left: 200px;
+    /* margin-left: 200px; */
     font-size: 16px;
     width: 100vh;
     padding: 15px;
+    text-align: center;
 }
 .page-header-login-logout{
     width: 26vh;
@@ -46,9 +47,11 @@ a{
 }
 .page-header-secondary-nav{
     font-size: 12px;
-    width: 60vh;
+    width: 130vh;
     margin-right: 20px;
-    padding-top: 5px;
+    padding-top: 8px;
+    text-align: center;
+   
 }
 .page-header-secondary-nav > a{
     color: #FFFFFF;
