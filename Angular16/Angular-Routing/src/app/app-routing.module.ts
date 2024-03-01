@@ -7,10 +7,12 @@ import { CoursesComponent } from './courses/courses.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CourseDetailComponent } from './courses/course-detail/course-detail.component';
 import { PopularComponent } from './home/popular/popular.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   // {path:'',component:HomeComponent},
-  {path:'',redirectTo:'Home',pathMatch:'full'},
+  {path:'',component:LoginComponent},
+  {path:'Login',component:LoginComponent},
   {path:'Home',component:HomeComponent},
   {path:'About',component:AboutComponent},
   {path:'Contact',component:ContactComponent},
@@ -20,6 +22,7 @@ const routes: Routes = [
     {path:'Course/:id',component:CourseDetailComponent},
     {path:'Popular', component:PopularComponent}
   ]},
+  
   {path:'**',component:NotFoundComponent}
   
 ];

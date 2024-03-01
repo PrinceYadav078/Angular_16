@@ -16,6 +16,7 @@ import { ServicesComponent } from './home/services/services.component';
 import { TestimonyComponent } from './home/testimony/testimony.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CourseDetailComponent } from './courses/course-detail/course-detail.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CourseDetailComponent } from './courses/course-detail/course-detail.com
     ServicesComponent,
     TestimonyComponent,
     NotFoundComponent,
-    CourseDetailComponent
+    CourseDetailComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
