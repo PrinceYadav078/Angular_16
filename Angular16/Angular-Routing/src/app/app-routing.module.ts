@@ -10,8 +10,8 @@ import { PopularComponent } from './home/popular/popular.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  // {path:'',component:HomeComponent},
-  {path:'',component:LoginComponent},
+  {path:'',component:HomeComponent},
+  // {path:'',component:LoginComponent},
   {path:'Login',component:LoginComponent},
   {path:'Home',component:HomeComponent},
   {path:'About',component:AboutComponent},
@@ -22,7 +22,7 @@ const routes: Routes = [
     {path:'Course/:id',component:CourseDetailComponent},
     {path:'Popular', component:PopularComponent}
   ]},
-  
+  {path:'Login',component:LoginComponent},
   {path:'**',component:NotFoundComponent}
   
 ];

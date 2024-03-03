@@ -17,6 +17,7 @@ export class AuthService {
     if(user){
       this.isLogged=true;
     }
+    return user;
   }
 
   logout(){

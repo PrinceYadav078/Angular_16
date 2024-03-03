@@ -71,8 +71,8 @@
         </a>
       </div>
       <div class="page-header-login-logout">
-        <a href="#">LOGIN</a>
-        <a href="#">LOGOUT</a>
+        <a [routerLink]="'Login'">LOGIN</a>
+        <a [routerLink]="'Login'" [queryParams]="{logout:true}">LOGOUT</a>
       </div>
     </div>
   </div>
