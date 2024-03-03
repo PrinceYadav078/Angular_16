@@ -9,7 +9,7 @@ import { CourseDetailComponent } from './courses/course-detail/course-detail.com
 import { PopularComponent } from './home/popular/popular.component';
 import { LoginComponent } from './login/login.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-import { CanActivate } from './auth.guard';
+import { CanActivate, CanActivateChild, resolve } from './auth.guard';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -17,13 +17,13 @@ const routes: Routes = [
   {path:'Login',component:LoginComponent},
   {path:'Home',component:HomeComponent},
   {path:'About',component:AboutComponent},
-  {path:'Contact',component:ContactComponent},
-  {path:'Courses',component:CoursesComponent},
+  {path:'Contact',component:ContactComponent, canDeactivate:[(comp:ContactComponent)=>{return comp.canExit()}]},
+  {path:'Courses',component:CoursesComponent, resolve:{courses:resolve}},
   // {path:'Courses/Course/:id', component:CourseDetailComponent},
-  {path:'Courses',children:[
-    {path:'Course/:id',component:CourseDetailComponent, canActivate:[CanActivate]},
-    {path:'Popular', component:PopularComponent, canActivate:[CanActivate]},
-    {path:'Checkout',component:CheckoutComponent, canActivate:[CanActivate]}
+  {path:'Courses',canActivateChild:[CanActivateChild], children:[
+    {path:'Course/:id',component:CourseDetailComponent,},
+    {path:'Popular', component:PopularComponent, },
+    {path:'Checkout',component:CheckoutComponent, }
   ]},
   {path:'Login',component:LoginComponent},
   {path:'**',component:NotFoundComponent}

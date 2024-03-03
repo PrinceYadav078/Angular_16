@@ -26,7 +26,8 @@ export class CoursesComponent implements OnInit {
         this.searchString === undefined ||
         this.searchString === null
       ) {
-        this.AllCourses = this.coursesService.courses;
+        // this.AllCourses = this.coursesService.courses;
+        this.AllCourses= this.activeRoute.snapshot.data['courses'];
       } else {
         this.AllCourses = this.coursesService.courses.filter((course) => {
           return course.title
