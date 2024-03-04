@@ -13,7 +13,7 @@ export class CoursesComponent implements OnInit {
   coursesService = inject(CourseService);
   searchString: string;
   activeRoute: ActivatedRoute = inject(ActivatedRoute);
-
+  isCourses:boolean=false;
   ngOnInit() {
     // this.searchString=this.activeRoute.snapshot.queryParams['search'];
     // this.searchString=this.activeRoute.snapshot.queryParamMap.get('search');
@@ -34,6 +34,9 @@ export class CoursesComponent implements OnInit {
             .toLowerCase()
             .includes(this.searchString.toLowerCase());
         });
+        if(this.AllCourses.length==0){
+          this.isCourses=true
+        }
       }
     });
   }
