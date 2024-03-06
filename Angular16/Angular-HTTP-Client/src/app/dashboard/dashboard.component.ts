@@ -14,6 +14,8 @@ export class DashboardComponent implements OnInit{
 
   http: HttpClient = inject(HttpClient);
 
+  allTasks:Task[]=[];
+
   ngOnInit(){
     this.fetchAllTasks()
   }
@@ -38,6 +40,10 @@ export class DashboardComponent implements OnInit{
     });
   }
 
+  onFetchTaskClicked(){
+    this.fetchAllTasks()
+  }
+
   fetchAllTasks(){
     this.http.get<{[key:string]:Task}>('https://angularhttpclient-11bb8-default-rtdb.firebaseio.com/tasks.json').pipe(map((response)=>{
       //TRANSFORM DATA
@@ -49,7 +55,8 @@ export class DashboardComponent implements OnInit{
       }
       return tasks;
     })).subscribe((tasks)=>{
-      console.log(tasks);
+      this.allTasks=tasks
+      // console.log(tasks);
     })
   }
 }
