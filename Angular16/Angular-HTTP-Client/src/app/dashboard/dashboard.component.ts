@@ -37,12 +37,10 @@ export class DashboardComponent implements OnInit {
       { headers: header }
     ).subscribe((response) => {
       console.log(response)
+      this.fetchAllTasks()
     });
   }
 
-  onFetchTaskClicked() {
-    this.fetchAllTasks()
-  }
 
   fetchAllTasks() {
     this.http.get<{ [key: string]: Task }>('https://angularhttpclient-11bb8-default-rtdb.firebaseio.com/tasks.json').pipe(map((response) => {
@@ -61,11 +59,15 @@ export class DashboardComponent implements OnInit {
   }
 
   DeleteTask(id: string) {
-    this.http.delete(`https://angularhttpclient-11bb8-default-rtdb.firebaseio.com/tasks/${id}.json`).subscribe(() => alert("Task Deleted Succesfully"))
+    this.http.delete(`https://angularhttpclient-11bb8-default-rtdb.firebaseio.com/tasks/${id}.json`).subscribe(() => {
+      this.fetchAllTasks()
+    })
   }
 
   DeleteAllTask() {
-    this.http.delete("https://angularhttpclient-11bb8-default-rtdb.firebaseio.com/tasks.json").subscribe(() => alert("All Tasks Deleted Succesfully"))
+    this.http.delete("https://angularhttpclient-11bb8-default-rtdb.firebaseio.com/tasks.json").subscribe(() => {
+      this.fetchAllTasks()
+    })
   }
 
 }

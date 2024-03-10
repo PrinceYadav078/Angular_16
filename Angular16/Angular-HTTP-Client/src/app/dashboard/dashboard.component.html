@@ -11,7 +11,6 @@
         </div>
         <div style="width: 50%; text-align: right;">
             <button class="create-task-btn" (click)="OpenCreateTaskForm()">Create Task</button>
-            <button class="create-task-btn" (click)="onFetchTaskClicked()">Fetch Tasks</button>
             <button class="create-task-btn" (click)="DeleteAllTask()">Clear Tasks</button>
         </div>
     </div>
@@ -19,6 +18,9 @@
     <hr>
 
     <div class="dashboard-item-container">
+        <div style="margin-left: 33%" *ngIf="allTasks.length<1">
+            <h2 >No task has been created yet!</h2>
+        </div>
             <div class="task-item" [ngClass]="'task-'+ task.status" *ngFor="let task of allTasks">
                 <div class="task-title">
                     <h3>{{task.title}}</h3>
