@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ButtonComponent } from './button/button.component';
 import { InputComponent } from './input/input.component';
+import { DatepickerComponent } from './datepicker/datepicker.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ButtonComponent,
-    InputComponent
+    InputComponent,
+    DatepickerComponent
   ],
   imports: [
     BrowserModule,
