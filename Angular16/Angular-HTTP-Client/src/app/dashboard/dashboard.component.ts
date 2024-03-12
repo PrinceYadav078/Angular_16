@@ -13,8 +13,11 @@ import { TaskService } from '../Services/task.service';
 export class DashboardComponent implements OnInit {
   showCreateTaskForm: boolean = false;
   taskService:TaskService=inject(TaskService);
-
+  isEdit:boolean=false;
   allTasks: Task[] = [];
+  selectedTask:Task
+  currentTaskId:string="";
+  isLoading:boolean=false;
 
   ngOnInit() {
     this.fetchAllTasks()
@@ -22,26 +25,37 @@ export class DashboardComponent implements OnInit {
 
   OpenCreateTaskForm() {
     this.showCreateTaskForm = true;
+    this.isEdit=false
+    this.selectedTask={title:"",desc:"",assignedTo:"",createdAt:"",priority:"",status:""}
+
   }
 
   CloseCreateTaskForm() {
     this.showCreateTaskForm = false;
   }
 
-  CreateTask(data: Task) {
-    this.taskService.CreateTask(data);
+  CreateOrUpdateTask(data: Task) {
+    if(!this.isEdit){
+      this.taskService.CreateTask(data);
+    }else{
+      this.taskService.UpdateTask(this.currentTaskId, data);
+    }
+    
     this.fetchAllTasks()
+
   }
 
 
   fetchAllTasks() {
+    this.isLoading=true;
     this.taskService.fetchAllTasks().subscribe((tasks) => {
       this.allTasks = tasks
+      this.isLoading=false;
       console.log(tasks);
     })
   }
 
-  DeleteTask(id: string) {
+  DeleteTask(id: string ) {
     this.taskService.DeleteTask(id)
     this.fetchAllTasks()
   }
@@ -51,4 +65,12 @@ export class DashboardComponent implements OnInit {
    this.fetchAllTasks()
   }
 
+  onEditClicked(id:string | undefined){
+    this.currentTaskId=id;
+    this.showCreateTaskForm = true;
+    this.isEdit=true;
+    this.selectedTask=this.allTasks.find((task)=>{
+      return task.id===id;
+    })
+  }
 }

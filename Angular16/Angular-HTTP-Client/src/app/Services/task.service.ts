@@ -45,4 +45,7 @@ export class TaskService {
     this.http.delete("https://angularhttpclient-11bb8-default-rtdb.firebaseio.com/tasks.json").subscribe()
   }
 
+  UpdateTask(id:string | undefined , data:Task){
+    this.http.put(`https://angularhttpclient-11bb8-default-rtdb.firebaseio.com/tasks/${id}.json`,data).subscribe();
+  }
 }
