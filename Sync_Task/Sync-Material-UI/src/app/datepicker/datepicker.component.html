@@ -4,5 +4,10 @@
 </div>
 
 <div class="datepicker">
-    <input type="date">
+    <input type="text" class="inputdate" placeholder="yyyy/mm/dd" [(ngModel)]="date" [value]="date">
+    <input type="date" id="mydate" [(ngModel)]="date">
+</div>
+
+<div class="content">
+    <h4 *ngIf="date">date Entered: {{date | date}}</h4>
 </div>

@@ -1,10 +1,36 @@
-.datepicker{
-    /* border: solid 1px; */
-    margin: 20px;
-    padding: 10px;
+.datepicker {
+  margin: 20px;
+  padding: 10px;
+  border-radius: 45px;
+  border: 2px solid #333;
+  position: relative;
+  width: 200px;
+  height: 20px;
 }
 
-.datepicker input{
-    font-size: xx-large;
-    border-radius: 45px;
+.datepicker input[type='date'] {
+  width: 20px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  margin-left: 10px;
+  
+}
+
+.datepicker input::before {
+    content: "enter date";
+    position: absolute;
+    top: -10px; /* Adjust the vertical position as needed */
+    left: 40%;
+    transform: translateX(-50%);
+    background-color: white; /* Set the background color */
+    padding: 0 10px; /* Adjust padding as needed */
+}
+
+.inputdate{
+    width: 150px;
+    border: none;
+    outline: none;
+    font-size: medium;
+    padding-left: 8px;
 }
